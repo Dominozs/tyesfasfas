@@ -1,6 +1,4 @@
-
-
-local selectedpath = loadstring(game:HttpGet('https://raw.githubusercontent.com/typicalcold/roblox/main/MRT%20Live%20ichikawa%20data'))()
+local selectedpath = loadstring(game:HttpGet('https://pastebin.com/raw/kdEcYQVj'))()
 
 
 
@@ -12,10 +10,10 @@ local runService = game:GetService("RunService")
 local globalenabled = false
 local running = false
 
-local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/UI-Interface/CustomFIeld/main/RayField.lua'))()
+local Rayfield = loadstring(game:HttpGet('https://pastebin.com/raw/Rv30MQKw'))()
 
 local Window = Rayfield:CreateWindow({
-   Name = "MRT farm MAY BE DETECTED - discord.gg/pm5Fj6tjv2",
+   Name = "MRT autofarm- by ColdSnow - kontool",
    LoadingTitle = "Loading blatant MRT farm",
    LoadingSubtitle = "by ColdSnow",
    ConfigurationSaving = {
@@ -77,7 +75,7 @@ local Toggle = Tab:CreateToggle({
 
 
 local joinui = false
- while wait(1) do
+ while wait(0.1) do
     if globalenabled  and not running and selectedpath ~= "" then
         print(selectedpath)
         local tmppaths = selectedpath[2]
@@ -91,18 +89,19 @@ local joinui = false
         }
         
         game:GetService("ReplicatedStorage"):WaitForChild("FrameworkEvent"):FireServer(unpack(args))
+	task.wait(0.1)
         game.Players.LocalPlayer.Character.Humanoid.Health = 0
         
-        task.wait(7)
-        game.Players.LocalPlayer.Character:MoveTo(Vector3.new(locationpos[1],locationpos[2],locationpos[3]) + Vector3.new(0,2,0))
+        task.wait(0.2)
+        game.Players.LocalPlayer.Character:MoveTo(Vector3.new(locationpos[1],locationpos[2],locationpos[3]) + Vector3.new(0,8,0))
         joinui = true
-        wait(4)
+        wait(0.2)
         while joinui do
                         local success, ErrorStatement = pcall(function()print(game:GetService("Players").LocalPlayer.PlayerGui.EventGui.Main.PlayerCount.Text) end)
             while not success do
-                game.Players.LocalPlayer.Character:MoveTo(Vector3.new(locationpos[1],locationpos[2],locationpos[3]) + Vector3.new(0,2,0))
+                game.Players.LocalPlayer.Character:MoveTo(Vector3.new(locationpos[1],locationpos[2],locationpos[3]) + Vector3.new(0,8,0))
                 print("Error: "..ErrorStatement)
-                task.wait(5) 
+                task.wait(2) 
                 success, ErrorStatement = pcall(function()print(game:GetService("Players").LocalPlayer.PlayerGui.EventGui.Main.PlayerCount.Text) end)
             end
             if string.find(game:GetService("Players").LocalPlayer.PlayerGui.EventGui.Main.PlayerCount.Text,"0/") then --add check
@@ -143,7 +142,7 @@ local joinui = false
 
 
 
-        task.wait(30)
+        task.wait(10)
         print("attempting")
         repeat wait(1) until #workspace.VehiclesFolder[game.Players.LocalPlayer.Name]:GetChildren() == 1
         local mycarmodel = workspace.VehiclesFolder[game.Players.LocalPlayer.Name]:GetChildren()[1].Body["#Weight"]
@@ -193,5 +192,4 @@ workspace.VehiclesFolder[game.Players.LocalPlayer.Name]:GetChildren()[1].Primary
     
     
     end
-
  end
