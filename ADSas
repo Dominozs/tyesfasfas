@@ -10,7 +10,7 @@ local runService = game:GetService("RunService")
 local globalenabled = false
 local running = false
 
-local Rayfield = loadstring(game:HttpGet('https://pastebin.com/raw/Rv30MQKw'))()
+local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/UI-Interface/CustomFIeld/main/RayField.lua'))()
 
 local Window = Rayfield:CreateWindow({
    Name = "MRT autofarm- by ColdSnow - kontool",
