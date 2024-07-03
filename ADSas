@@ -89,7 +89,6 @@ local joinui = false
         }
         
         game:GetService("ReplicatedStorage"):WaitForChild("FrameworkEvent"):FireServer(unpack(args))
-	task.wait(0.1)
         game.Players.LocalPlayer.Character.Humanoid.Health = 0
         
         task.wait(0.2)
